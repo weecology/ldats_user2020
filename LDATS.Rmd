@@ -85,20 +85,96 @@ knitr::include_graphics("img/christensen_etal_title.png")
 <br>
 [Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373) established methods
 
-## Goals for LDATS Package
+## Goals for LDATS Package 
 
 * Standardize
 * Generalize
+* Optimize
+
+<div class="build">
+```{r, out.width = "800px", fig.align = "center", fig.cap = "Screencap of LDATS on CRAN; https://cran.r-project.org/web/packages/LDATS/index.html", echo = FALSE}
+knitr::include_graphics("img/LDATS_cran.png")
+```
+</div>
 
 
 ## Statistical Approach
 
+Two-stage analyses:
 
-## Dimension Reduction
+1. Reduce dimensions 
+2. Analyze time series from [1]
 
+## Dimension Reduction 
 Latent Dirichlet Allocation
 
-![Plate notation for Latent Dirichlet Allocation](img/lda.png "Plate notation for Latent Dirichlet Allocation")
+<div class="columns-2" style="font-size: 22pt">
+<div class="build">
+$M$ total documents  
+$N$ total words  
+$w$ word identity  
+$z$ topic identity  
+$\theta$ topics-in-documents   
+$\alpha$ Dirichlet parameter for $\theta$  
+$\beta$ terms-in-topics  
+</div>
+
+```{r, out.width = "400px", fig.align = "center", fig.cap = "Plate notation for Latent Dirichlet Allocation", echo = FALSE}
+knitr::include_graphics("img/lda.png")
+```
+
+&nbsp;
+&nbsp;
+<div class="build">
+```{r, out.width = "250px", fig.align = "right", fig.cap = "Bookshelf", echo = FALSE}
+knitr::include_graphics("img/books.png")
+```
+</div>
+</div>
+
+
+
+
+
+
+## Dimension Reduction 
+Latent Dirichlet Allocation
+
+```{r, out.width = "600px", fig.align = "center", fig.cap = "Matrix decomposition representation of LDA", echo = FALSE}
+knitr::include_graphics("img/matrix_decomp.png")
+```
+
+&nbsp;
+```{r, out.width = "250px", fig.align = "center", fig.cap = "Bookshelf", echo = FALSE}
+knitr::include_graphics("img/books.png")
+```
+
+## Dimension Reduction 
+Latent Dirichlet Allocation
+
+```{r, out.width = "600px", fig.align = "center", fig.cap = "Matrix decomposition representation of LDA with ecological terms", echo = FALSE}
+knitr::include_graphics("img/matrix_decomp_eco.png")
+```
+  
+&nbsp;
+```{r, out.width = "400px", fig.align = "center", fig.cap = "Collage of rodent species from the Portal Project; https://portal.naturecast.org/profiles.html", echo = FALSE}
+knitr::include_graphics("img/rodent_collage.png")
+```
+
+## Dimension Reduction 
+Latent Dirichlet Allocation
+
+```{r, out.width = "600px", fig.align = "center", fig.cap = "Matrix decomposition representation of LDA with ecological terms and Gamma bolded", echo = FALSE}
+knitr::include_graphics("img/matrix_decomp_eco_bold.png")
+```
+  
+&nbsp;
+```{r, out.width = "400px", fig.align = "center", fig.cap = "Collage of rodent species from the Portal Project; https://portal.naturecast.org/profiles.html", echo = FALSE}
+knitr::include_graphics("img/rodent_collage.png")
+```
+
+
+
 
 ## Time Series
 
