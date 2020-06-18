@@ -6,7 +6,7 @@ output:
   ioslides_presentation: 
     logo: userlogo.png
     css: style.css
-    incremental: true
+    widescreen: true
   md_document: default
 ---
 
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Motivated by ecological communities to develop tools for  multi-dimensional time series
 
 
-```{r, out.width = "700px", fig.align = "center", fig.cap = "Collage of rodent species from the Portal Project; https://portal.naturecast.org/profiles.html", echo = FALSE}
+```{r, out.width = "800px", fig.align = "center", fig.cap = "Collage of rodent species from the Portal Project; https://portal.naturecast.org/profiles.html", echo = FALSE}
 knitr::include_graphics("img/rodent_collage.png")
 ```
 
@@ -27,7 +27,7 @@ knitr::include_graphics("img/rodent_collage.png")
 Motivated by ecological communities to develop tools for  multi-dimensional time series
 
 
-```{r, out.width = "700px", fig.align = "center", fig.cap = "Time series of rodent populations", echo = FALSE}
+```{r, out.width = "800px", fig.align = "center", fig.cap = "Time series of rodent populations", echo = FALSE}
 knitr::include_graphics("img/time_series_full.png")
 ```
 
@@ -36,7 +36,7 @@ knitr::include_graphics("img/time_series_full.png")
 Motivated by ecological communities to develop tools for  multi-dimensional time series
 
 
-```{r, out.width = "700px", fig.align = "center", fig.cap = "Time series of rodent populations with putative qualitative changes noted", echo = FALSE}
+```{r, out.width = "800px", fig.align = "center", fig.cap = "Time series of rodent populations with putative qualitative changes noted", echo = FALSE}
 knitr::include_graphics("img/time_series_full_verts.png")
 ```
 
@@ -47,12 +47,14 @@ knitr::include_graphics("img/time_series_full_verts.png")
 Quantify how ecosystems are responding to stressors
 
 <div class="columns-2">
+<div class="build">
 * Climate change
 * Invasive species
 * Landscape alteration
+</div>
 
 <br>
-```{r, out.width = "325px", fig.align = "center", fig.cap = "Phase plane of precipitation and temperature at Portal over time", echo = FALSE}
+```{r, out.width = "400px", fig.align = "center", fig.cap = "Phase plane of precipitation and temperature at Portal over time", echo = FALSE}
 knitr::include_graphics("img/climatefig.png")
 ```
 </div>
@@ -61,16 +63,18 @@ knitr::include_graphics("img/climatefig.png")
 
 <div class="columns-2">
 
-Need to distinguish
+Need to distinguish among dynamics
 
+<div class="build">
 * Stochasticity
 * Autocorrelation
 * Cyclical dynamics
 * Gradual change
 * Abrupt shifts
+</div>
 
 <br>
-```{r, out.width = "400px", fig.align = "right", fig.cap = "Time series of rodent populations zoomed in to moons 200 to 400", echo = FALSE}
+```{r, out.width = "450px", fig.align = "right", fig.cap = "Time series of rodent populations zoomed in to moons 200 to 400", echo = FALSE}
 knitr::include_graphics("img/time_series.png")
 ```
 
@@ -85,14 +89,44 @@ knitr::include_graphics("img/christensen_etal_title.png")
 <br>
 [Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373) established methods
 
+## Background
+
+LDATS: **L**atent **D**irichlet **A**llocation coupled with **T**ime **S**eries analyses
+
+<br>
+[Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373) established methods
+
+## Background (coming soon!)
+
+LDATS: **L**inguistic **D**ecomposition **A**lgorithms coupled with **T**ime **S**eries analyses
+
+<br>
+[Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373) established methods
+
+
+
 ## Goals for LDATS Package 
 
-* Standardize
-* Generalize
-* Optimize
-
 <div class="build">
-```{r, out.width = "800px", fig.align = "center", fig.cap = "Screencap of LDATS on CRAN; https://cran.r-project.org/web/packages/LDATS/index.html", echo = FALSE}
+* Standardize, Generalize, Optimize [Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373) methodology
+* `lm`-style analysis API
+
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Digital painting of horses coming out from under the hood of a truck; https://www.deviantart.com/sesroh/art/235-Horses-Under-The-Hood-52286525", echo = FALSE}
+knitr::include_graphics("img/horses.jpg")
+```
+</div>
+
+
+## Goals for LDATS Package 
+
+
+<div class="build" style="font-size: 22pt">
+`
+LDA_TS(data, topics = 2, replicates = 1, formulas = ~1, nchangepoints = 0, 
+    timename = "time", weights = TRUE, control = list())
+`
+
+```{r, out.width = "1000px", fig.align = "center", fig.cap = "Screencap of LDATS on CRAN; https://cran.r-project.org/web/packages/LDATS/index.html", echo = FALSE}
 knitr::include_graphics("img/LDATS_cran.png")
 ```
 </div>
@@ -102,8 +136,10 @@ knitr::include_graphics("img/LDATS_cran.png")
 
 Two-stage analyses:
 
-1. Reduce dimensions 
+<div class="build">
+1. Reduce dimensions  
 2. Analyze time series from [1]
+</div>
 
 ## Dimension Reduction 
 Latent Dirichlet Allocation
@@ -131,8 +167,6 @@ knitr::include_graphics("img/books.png")
 ```
 </div>
 </div>
-
-
 
 
 
@@ -178,53 +212,252 @@ knitr::include_graphics("img/rodent_collage.png")
 
 ## Time Series
 
-Abrupt change points
+Multivariate response with a suite of possible dynamics
 
-Fit using parallel tempering MCMC
+<div class="build">
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Time series of LDA decomposed rodent data", echo = FALSE}
+knitr::include_graphics("img/paper_lda.png")
+```
+</div>
+
+## Time Series
+
+Multivariate response 
+
+<div class="build">
+Softmax-based regression via `nnet`
+
+&nbsp;
+$$S(y_i) = \frac{e^y_i}{\sum_je^y_j}$$
+</div>
+
+## Time Series (coming soon!)
+
+Multivariate response 
+
+<div class="build">
+Simplex-based regression via `compositions`
+
+&nbsp;
+$$\mathrm{ILR}(y_i) = \sqrt{\frac{i}{i+1}}\mathrm{ln}(\frac{\overline{\mathbf{x}}}{x_{i+1}}) $$ 
+
+</div>
+
+
+## Time Series
+
+Bayesian Change Point Indicator Regression
+
+<div class="build">
+```{r, out.width = "600px", fig.align = "center", fig.cap = "Change Point time series from Ruggieri paper showing application of multi-change point model to NOAA temperature anomaly data", echo = FALSE}
+knitr::include_graphics("img/ruggieri_fig2.png")
+```
+</div>
+
+## Time Series
+
+Bayesian Change Point Indicator Regression
+
+<div class="build">
+* 0, 1, ... change points
+* varying dynamics between change points
+</div>
+
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Time series of LDA decomposed rodent data", echo = FALSE}
+knitr::include_graphics("img/paper_lda_bottom.png")
+```
+
+
+## Time Series {.build}
+
+Sequential fitting:
+
+1. Posterior probability of change points, unconditional on regressors
+    - produces estimates of regressors conditional on change points
+2. De-condition posterior probabilities of regressors given uncertain change points
+
+
+
+## Time Series
+
+```{r, out.width = "600px", fig.align = "center", fig.cap = "Time series of LDA decomposed rodent data analyzed using the time series model, with change points and fitted dynamics shown", echo = FALSE}
+knitr::include_graphics("img/paper_ts.png")
+```
+
+
+## Time Series
+
+Estimation via parallel tempering Markov Chain Monte Carlo (ptMCMC) over the top of multinomial regression
+
+Coded internally in `LDATS` functions
+
 
 ## ptMCMC
 
+<div class="columns-2">
+<div class ="build">
+```{r, out.width = "400px", fig.align = "center", fig.cap = "Figure 1 from Earl and Deem 2005 showing a 2-D representation of a phase space for which ptMCMC is useful", echo = FALSE}
+knitr::include_graphics("img/earl_and_deem_fig1.png")
+```
 
-## `LDATS` Package
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Figure 2 from Earl and Deem 2005, a schematic of parallel tempering chains with swapping", echo = FALSE}
+knitr::include_graphics("img/earl_and_deem_fig2.png")
+```
+</div>
+</div>
 
-Top-level API target: an "`lm`-style"
 
+## `LDATS` Package {.build}
+
+- v0.2.7
+  - [Released on CRAN](https://cran.r-project.org/package=LDATS)
+- v0.3.0
+  - [In development on GitHub](https://github.com/weecology/LDATS/pull/152)
+
+
+## `LDATS` Package {.build}
+
+Top-level API:
+
+
+<div style="font-size: 22pt">
 `
 LDA_TS(data, topics = 2, nseeds = 1, formulas = ~1, nchangepoints = 0, 
     timename = "time", weights = TRUE, control = list())
 `
+</div>
+
+
+Multi-model friendly  
+  
+Down-and-dirty details in `control` lists
+
+
+## `LDATS` Package (coming soon!)
+
+Top-level API v0.3.0:
+
+<div style="font-size: 22pt">
+`
+LDA_TS(data, topics = 2, replicates = 1, formulas = ~1, nchangepoints = 0, 
+    timename = "time", weights = TRUE, control = list())
+`
+</div>
+
+Multi-model friendly  
+  
+Down-and-dirty details in `control` lists
+
 
 ## `LDATS` Package
 
-Under-the-hood
+Internally-conducted summaries
+
+<div class = "build" style="font-size: 22pt">
+`
+ldats <- LDA_TS(data)
+`
 
 
-## `LDATS` Package
+`
+lda[["Selected TS model"]][["rho_summary"]]
+`
 
-### LDATS v0.2.7
+<div style="font-size: 12pt">
 
-Released on CRAN
 
-## `LDATS` Package
+```{r rho_summary, echo = FALSE}
 
-### LDATS v0.3.0
-
-In development on GitHub
-
-## eh
-
-```{r uf, echo=FALSE, fig.cap="A caption", out.width = '20%'}
-knitr::include_graphics("img/uf.png")
+x <- c(Mean = 209.3, Median = 211, Mode = 215, Lower95 = 190, Upper95 = 225, SD = 9.7, MCMCerr = 0.307, AC10 = 0.010, ESS = 380.35)
+x1 <- data.frame(matrix(x, nrow = 1))
+colnames(x1) <- names(x)
+knitr::kable(x1, format = "html", caption = 'Changepoint ptMCMC summary table')
 ```
+</div>
+</div>
+
+
+## `LDATS` Package
+
+Internally-conducted summaries
+
+<div class = "build" style="font-size: 22pt">
+`
+ldats <- LDA_TS(data)
+`
+
+`
+lda[["Selected TS model"]][["eta_summary"]]
+`
+</div>
+
+## `LDATS` Package
+
+
+<div style="font-size: 10pt">
+
+```{r eta_summary, echo = FALSE}
+x <- read.csv("data/eta.csv")
+colnames(x)[1] <- ""
+knitr::kable(x, format = "html", caption = 'Regressor ptMCMC summary table')
+```
+</div>
+
+
+
+## `LDATS` Package
+
+Plotting functionality
+
+<div class = "build" style="font-size: 22pt">
+`
+ldats <- LDA_TS(data)
+`
+
+`
+plot(ldats)
+`
+</div>
+
+
+## `LDATS` Package
+
+<div class="columns-2">
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Time series of LDA decomposed rodent data", echo = FALSE}
+knitr::include_graphics("img/examp_lda.png")
+```
+
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Time series of LDA decomposed rodent data analyzed using the time series model, with change points and fitted dynamics shown", echo = FALSE}
+knitr::include_graphics("img/examp_ts.png")
+```
+</div>
+
+
+## `LDATS` Package
+
+<div class ="build">
+- v0.2.7
+  - [Released on CRAN](https://cran.r-project.org/package=LDATS)
+
+```{r, out.width = "800px", fig.align = "center", fig.cap = "Development status badges for LDATS", echo = FALSE}
+knitr::include_graphics("img/dev_status.png")
+```
+
+&nbsp;
+- v0.3.0
+  - [In development on GitHub](https://github.com/weecology/LDATS/pull/152)
+</div>
+
+
 
 ## Acknowledgements
 
-### Funding 
+### **Funding** 
 
 National Science Foundation: DEB-1622425, DGE-1315138, DGE-1842473
 
 Gordon and Betty Moore Foundation: Data-Driven Discovery Initiative Grant GBMF4563 
 
-
-![Weecology logo](img/weecology_logo.png)
-![DAPPER Stats logo](img/logo_web_color.png)
+```{r logos, width = "600px", echo=FALSE, fig.cap="Weecology, DAPPER Stats, and UF logos"}
+knitr::include_graphics("img/logo.png")
+```
