@@ -51,20 +51,20 @@ Quantify how ecosystems are responding to stressors
 * Climate change
 * Invasive species
 * Landscape alteration
-</div>
 
-<br>
+
 ```{r, out.width = "400px", fig.align = "center", fig.cap = "Phase plane of precipitation and temperature at Portal over time", echo = FALSE}
 knitr::include_graphics("img/climatefig.png")
 ```
 </div>
+</div>
 
 ## Background
 
+Need to distinguish among dynamics
 <div class="columns-2">
 
-Need to distinguish among dynamics
-
+<br>
 <div class="build">
 * Stochasticity
 * Autocorrelation
@@ -120,7 +120,7 @@ knitr::include_graphics("img/horses.jpg")
 ## Goals for LDATS Package 
 
 
-<div class="build" style="font-size: 22pt">
+<div style="font-size: 22pt">
 `
 LDA_TS(data, topics = 2, replicates = 1, formulas = ~1, nchangepoints = 0, 
     timename = "time", weights = TRUE, control = list())
@@ -148,7 +148,7 @@ Latent Dirichlet Allocation
 <div class="build">
 $M$ total documents  
 $N$ total words  
-$w$ word identity  
+$w$ term identity  
 $z$ topic identity  
 $\theta$ topics-in-documents   
 $\alpha$ Dirichlet parameter for $\theta$  
@@ -225,10 +225,12 @@ knitr::include_graphics("img/paper_lda.png")
 Multivariate response 
 
 <div class="build">
+<div>
 Softmax-based regression via `nnet`
 
 &nbsp;
 $$S(y_i) = \frac{e^y_i}{\sum_je^y_j}$$
+</div>
 </div>
 
 ## Time Series (coming soon!)
@@ -236,11 +238,12 @@ $$S(y_i) = \frac{e^y_i}{\sum_je^y_j}$$
 Multivariate response 
 
 <div class="build">
+<div>
 Simplex-based regression via `compositions`
 
 &nbsp;
 $$\mathrm{ILR}(y_i) = \sqrt{\frac{i}{i+1}}\mathrm{ln}(\frac{\overline{\mathbf{x}}}{x_{i+1}}) $$ 
-
+</div>
 </div>
 
 
@@ -268,14 +271,15 @@ knitr::include_graphics("img/paper_lda_bottom.png")
 ```
 
 
-## Time Series {.build}
+## Time Series
 
 Sequential fitting:
 
+<div class="build">
 1. Posterior probability of change points, unconditional on regressors
     - produces estimates of regressors conditional on change points
 2. De-condition posterior probabilities of regressors given uncertain change points
-
+</div>
 
 
 ## Time Series
@@ -289,11 +293,6 @@ knitr::include_graphics("img/paper_ts.png")
 
 Estimation via parallel tempering Markov Chain Monte Carlo (ptMCMC) over the top of multinomial regression
 
-Coded internally in `LDATS` functions
-
-
-## ptMCMC
-
 <div class="columns-2">
 <div class ="build">
 ```{r, out.width = "400px", fig.align = "center", fig.cap = "Figure 1 from Earl and Deem 2005 showing a 2-D representation of a phase space for which ptMCMC is useful", echo = FALSE}
@@ -306,13 +305,17 @@ knitr::include_graphics("img/earl_and_deem_fig2.png")
 </div>
 </div>
 
+## Time Series
 
-## `LDATS` Package {.build}
+Estimation via parallel tempering Markov Chain Monte Carlo (ptMCMC) over the top of multinomial regression
 
-- v0.2.7
-  - [Released on CRAN](https://cran.r-project.org/package=LDATS)
-- v0.3.0
-  - [In development on GitHub](https://github.com/weecology/LDATS/pull/152)
+Coded internally in `LDATS` functions
+
+```{r, out.width = "500px", fig.align = "center", fig.cap = "Digital painting of horses coming out from under the hood of a truck; https://www.deviantart.com/sesroh/art/235-Horses-Under-The-Hood-52286525", echo = FALSE}
+knitr::include_graphics("img/horses.jpg")
+```
+
+
 
 
 ## `LDATS` Package {.build}
