@@ -349,6 +349,18 @@ Multi-model friendly
 Down-and-dirty details in `control` lists
 
 
+
+## `LDATS` Package
+
+Vignettes 
+
+  - show full application
+  - compare package to [Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373)
+  - detail codebase
+
+[Package website](https://weecology.github.io/LDATS) 
+
+
 ## `LDATS` Package
 
 Internally-conducted summaries
@@ -357,7 +369,6 @@ Internally-conducted summaries
 `
 ldats <- LDA_TS(data)
 `
-
 
 `
 lda[["Selected TS model"]][["rho_summary"]]
@@ -381,7 +392,7 @@ knitr::kable(x1, format = "html", caption = 'Changepoint ptMCMC summary table')
 
 Internally-conducted summaries
 
-<div class = "build" style="font-size: 22pt">
+<div style="font-size: 22pt">
 `
 ldats <- LDA_TS(data)
 `
@@ -409,7 +420,7 @@ knitr::kable(x, format = "html", caption = 'Regressor ptMCMC summary table')
 
 Plotting functionality
 
-<div class = "build" style="font-size: 22pt">
+<div style="font-size: 22pt">
 `
 ldats <- LDA_TS(data)
 `
@@ -443,12 +454,49 @@ knitr::include_graphics("img/examp_ts.png")
 knitr::include_graphics("img/dev_status.png")
 ```
 
-&nbsp;
 - v0.3.0
   - [In development on GitHub](https://github.com/weecology/LDATS/pull/152)
 </div>
 
 
+## `LDATS` Package
+
+- [Work In Progress v0.3.0](https://github.com/weecology/LDATS/pull/152)
+
+- `simulate`
+- `predict`
+- flexible model selection methods
+  - hold out & cross-validation
+
+## Application
+
+Context: [Macro-ecological Analyses of Time Series Structure (MATSS)](https://github.com/weecology/MATSS)
+
+[MATSS LDATS](https://github.com/weecology/MATSS-LDATS)
+
+Leverage a massive compendium of ecological time series to evaluate the presence of, e.g., regime shifts
+
+
+## Application
+
+```{r, out.width = "850px", fig.align = "center", fig.cap = "Results of LDATS analyses for many ecological communities", echo = FALSE}
+knitr::include_graphics("img/matss_ldats.png")
+```
+
+
+## Interested?
+
+We welcome collaborators and contributors!
+
+[Christensen et al. 2018](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2373)
+
+
+[CRAN](https://cran.r-project.org/package=LDATS)
+
+
+[Github](https://github.com/weecology/LDATS)  
+  - [Guidlines for contributors](https://github.com/weecology/LDATS/blob/master/CONTRIBUTING.md)  
+  - [License](https://github.com/weecology/LDATS/blob/master/LICENSE.md)  
 
 ## Acknowledgements
 
