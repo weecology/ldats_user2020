@@ -161,11 +161,9 @@ knitr::include_graphics("img/lda.png")
 
 &nbsp;
 &nbsp;
-<div class="build">
 ```{r, out.width = "250px", fig.align = "right", fig.cap = "Bookshelf", echo = FALSE}
 knitr::include_graphics("img/books.png")
 ```
-</div>
 </div>
 
 
@@ -374,7 +372,7 @@ ldats <- LDA_TS(data)
 `
 
 `
-lda[["Selected TS model"]][["rho_summary"]]
+ldats[["Selected TS model"]][["rho_summary"]]
 `
 
 <div style="font-size: 12pt">
@@ -401,7 +399,7 @@ ldats <- LDA_TS(data)
 `
 
 `
-lda[["Selected TS model"]][["eta_summary"]]
+ldats[["Selected TS model"]][["eta_summary"]]
 `
 </div>
 

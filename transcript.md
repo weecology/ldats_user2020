@@ -6,7 +6,7 @@ This work was done in collaboration with a team of researchers based out of the 
 
 # 2
 
-Our motivation in developing the analytical tools is understanding multi-dimensional ecological time series.
+Our motivation is developing analytical tools to study multi-dimensional ecological time series.
 Specifically, the project was started to analyze dynamics of the Portal Project rodent community, a group of 20 species of rodents 
 
 # 3
@@ -16,8 +16,9 @@ This time series shows each species' counts individually over time, and makes ev
 
 # 4
 
-Just eye-balling these four lines, we can see periods in the time series where not only the species-level dynamics change, but so too do the community-level dynamics.
-For example, here considering the species identities, relative abundances, and cyclicity.
+Just eye-balling these four lines, we can see periods in the time series where the species-level and the community-level dynamics change.
+For example, the advent of large-magnitude cycles in the most recent time period.
+
 
 # 5
 
@@ -61,15 +62,17 @@ with the first being focused on reducing the dimensionality of the data and the 
 
 # 13
 
-As you might imagine, given the name of the package, the initial dimension reduction technique used has been Latent Dirichlet Allocation, which is shown here in plate notation on the right, where
-there are M total documents with N total words
+As you might imagine, given the name of the package, the initial dimension reduction technique used has been Latent Dirichlet Allocation, which is shown here in plate notation on the right
+
+and derives its terminology from the original application of LDA to text corpora.
+
+where there are M total documents with N total words
 each observed word has term identity w and topic identity z
 the model is governed by 
 α Dirichlet parameter for θ, the topics-in-documents distribution and
 β is the terms-in-topics distribution
 This model allows individual terms to belong to multiple topics.
 
-The terminology here, like words and documents, derives from the original application of LDA to text corpora.
 
 # 14 
 
